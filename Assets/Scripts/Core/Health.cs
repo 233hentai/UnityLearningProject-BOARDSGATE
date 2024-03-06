@@ -7,13 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 namespace BOARDSGATE.Core{
     public class Health : MonoBehaviour,ISaveable{
         [SerializeField]float health=100f;
-        [SerializeField]float maxHealth=100f;
-
         bool isDead=false;
-        private void Start() {
-            health=maxHealth;
-
-        }
         public void TakeDamage(float damage){
             health=health-damage>=0?health-damage:0;
             if(health==0){

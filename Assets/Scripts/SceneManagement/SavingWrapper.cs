@@ -8,6 +8,14 @@ namespace BOARDSGATE.SceneMnagement{
     {
         const string savingFileName="Save";
 
+        [SerializeField] float loadFadeInTime=1f;
+
+        IEnumerator Start() {
+            Fader fader=FindObjectOfType<Fader>();
+            fader.FadeOutDirectly();
+            yield return GetComponent<SavingSystem>().LoadLastScene(savingFileName);
+            yield return fader.FadeIn(loadFadeInTime);
+        }
         void Update()
         {
             if(Input.GetKeyDown(KeyCode.L)){

@@ -22,6 +22,10 @@ namespace BOARDSGATE.SceneMnagement{
                 yield return null;
             }
         }
+
+        public void FadeOutDirectly(){
+            canvasGroup.alpha=0;
+        }
     }
 }
 

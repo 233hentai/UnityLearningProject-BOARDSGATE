@@ -32,11 +32,15 @@ namespace BOARDSGATE.SceneMnagement{
             DontDestroyOnLoad(gameObject);
             Fader fader=FindObjectOfType<Fader>();
             yield return fader.FadeOut(fadeOutTime);
-            FindObjectOfType<SavingWrapper>().Save();
+            SavingWrapper savingWrapper=FindObjectOfType<SavingWrapper>();
+            savingWrapper.Save();
             yield return SceneManager.LoadSceneAsync(sceneIndex);
-            FindObjectOfType<SavingWrapper>().Load();
+            savingWrapper.Load();
+
             Portal anotherPortal=GetAnotherPortal();
             UpdatePlayer(anotherPortal);
+            savingWrapper.Save();//到一个新场景后自动存档
+
 
             yield return fader.FadeIn(fadeInTime);
             yield return new WaitForSeconds(0.5f);
