@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8238945085466386720}
   - component: {fileID: 618606882175876213}
   - component: {fileID: 7964943565990076231}
-  - component: {fileID: -163396895363989477}
+  - component: {fileID: 645535607329756558}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -163,7 +163,7 @@ MonoBehaviour:
   assaultRange: 2
   timeBetweenAssault: 1
   damage: 30
---- !u!114 &-163396895363989477
+--- !u!114 &645535607329756558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6712557362060301088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea9374b509b70f4bba37e4a2ca8cf00, type: 3}
+  m_Script: {fileID: 11500000, guid: f04f9815857e8584ebfe5c3aac79981b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueIdentifier: 

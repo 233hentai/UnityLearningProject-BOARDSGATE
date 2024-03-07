@@ -5980,6 +5980,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
     - target: {fileID: 5149648896940335139, guid: 7818f293fa016c94ebf90776e4db7714, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149648896940335139, guid: 7818f293fa016c94ebf90776e4db7714, type: 3}
       propertyPath: maxHealth
       value: 150
       objectReference: {fileID: 0}
@@ -6853,6 +6857,14 @@ PrefabInstance:
       value: -78.45385
       objectReference: {fileID: 0}
     - target: {fileID: 3945338469831474520, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945338469831474520, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945338469831474520, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.9659258
       objectReference: {fileID: 0}
@@ -6923,6 +6935,10 @@ PrefabInstance:
     - target: {fileID: 7451835484087785569, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
       propertyPath: m_LocalPosition.z
       value: -83.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8639956954610218223, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
+      propertyPath: health
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
