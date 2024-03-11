@@ -44,18 +44,19 @@ namespace BOARDSGATE.Movement{
             navMeshAgent.isStopped=true;
         }
 
-        public object CaptureState()
+        public object GetStates()
         {
-            return new SerializableVector3(transform.position);
+            return new Vector3Serializable(transform.position);
         }
 
-        public void RestoreState(object state)
+        public void RestoreStates(object state)
         {
-            SerializableVector3 position=(SerializableVector3)state;
+            Vector3Serializable position=(Vector3Serializable)state;
+            print(gameObject+": "+position.ToVector3());
             GetComponent<NavMeshAgent>().enabled=false;//启用navmesh时改变位置可能会引起Bug
-            transform.position=position.ToVector();
+            transform.position=position.ToVector3();
             GetComponent<NavMeshAgent>().enabled=true;
-
+            GetComponent<ActionScheduler>().CancelCurrentAction();
         }
     }
 }

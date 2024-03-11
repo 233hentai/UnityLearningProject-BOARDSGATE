@@ -30,12 +30,12 @@ namespace BOARDSGATE.Core{
             return isDead;
         }
 
-        public object CaptureState()
+        public object GetStates()
         {
             return health;
         }
 
-        public void RestoreState(object state)
+        public void RestoreStates(object state)
         {
             health=(float)state;
             if(health<=0){

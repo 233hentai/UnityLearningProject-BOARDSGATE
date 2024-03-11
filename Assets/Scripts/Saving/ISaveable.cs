@@ -2,7 +2,7 @@ namespace BOARDSGATE.Saving
 {
     public interface ISaveable
     {
-        object CaptureState();
-        void RestoreState(object state);
+        object GetStates();
+        void RestoreStates(object state);
     }
 }

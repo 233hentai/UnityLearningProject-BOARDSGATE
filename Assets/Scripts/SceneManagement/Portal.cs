@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BOARDSGATE.Saving;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -32,18 +33,18 @@ namespace BOARDSGATE.SceneMnagement{
             DontDestroyOnLoad(gameObject);
             Fader fader=FindObjectOfType<Fader>();
             yield return fader.FadeOut(fadeOutTime);
-            SavingWrapper savingWrapper=FindObjectOfType<SavingWrapper>();
-            savingWrapper.Save();
+            SLWrapper Wrapper=FindObjectOfType<SLWrapper>();
+            Wrapper.Save();
             yield return SceneManager.LoadSceneAsync(sceneIndex);
-            savingWrapper.Load();
+            Wrapper.Load();
 
             Portal anotherPortal=GetAnotherPortal();
             UpdatePlayer(anotherPortal);
-            savingWrapper.Save();//到一个新场景后自动存档
+            Wrapper.Save();//到一个新场景后自动存档
 
 
             yield return fader.FadeIn(fadeInTime);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(fadeWaitTime);
 
             Destroy(gameObject);
         }

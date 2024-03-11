@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: uniqueIdentifier
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 645535607329756558, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: uniqueID
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2825980436501301394, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -116,8 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfda2683ee5d444d96c2db89eafe1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 200
+  health: 200
 --- !u!136 &3999523374736427627
 CapsuleCollider:
   m_ObjectHideFlags: 0

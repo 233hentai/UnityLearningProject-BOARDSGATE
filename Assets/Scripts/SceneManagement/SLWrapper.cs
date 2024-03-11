@@ -1,20 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using BOARDSGATE.Saving;
 using UnityEngine;
+
 namespace BOARDSGATE.SceneMnagement{
-    public class SavingWrapper : MonoBehaviour
+    public class SLWrapper : MonoBehaviour
     {
-        const string savingFileName="Save";
+        const string savingFileName="save";
+        [SerializeField]float fadeInTime=0.5f;
 
-        [SerializeField] float loadFadeInTime=1f;
-
-        IEnumerator Start() {
+        private IEnumerator Start() {
             Fader fader=FindObjectOfType<Fader>();
             fader.FadeOutDirectly();
-            yield return GetComponent<SavingSystem>().LoadLastScene(savingFileName);
-            yield return fader.FadeIn(loadFadeInTime);
+            yield return GetComponent<SLSystem>().LoadLastScene(savingFileName);
+            yield return fader.FadeIn(fadeInTime);
+
         }
         void Update()
         {
@@ -28,12 +28,12 @@ namespace BOARDSGATE.SceneMnagement{
 
         public void Save()
         {
-            GetComponent<SavingSystem>().Save(savingFileName);
+            GetComponent<SLSystem>().Save(savingFileName);
         }
 
         public void Load()
         {
-            GetComponent<SavingSystem>().Load(savingFileName);
+            GetComponent<SLSystem>().Load(savingFileName);
         }
     }
 }

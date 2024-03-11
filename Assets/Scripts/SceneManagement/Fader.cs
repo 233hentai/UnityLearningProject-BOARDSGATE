@@ -6,9 +6,10 @@ namespace BOARDSGATE.SceneMnagement{
     public class Fader : MonoBehaviour
     {      
         CanvasGroup canvasGroup;
-        private void Start() {
+        private void Awake() {
             canvasGroup=GetComponent<CanvasGroup>();
         }
+
         public IEnumerator FadeOut(float time){
             while(canvasGroup.alpha<1){
                 canvasGroup.alpha+=Time.deltaTime/time;
@@ -24,7 +25,7 @@ namespace BOARDSGATE.SceneMnagement{
         }
 
         public void FadeOutDirectly(){
-            canvasGroup.alpha=0;
+            canvasGroup.alpha=1;
         }
     }
 }
