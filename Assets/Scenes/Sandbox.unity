@@ -6937,6 +6937,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3374589369380114356, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 82887004e3fb0784eaae2caf756734a4, type: 2}
+    - target: {fileID: 3374589369380114356, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
+      propertyPath: animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: 54827e7eb1c3fce43a7ce11510f0f89e, type: 2}
     - target: {fileID: 3945338469831474520, guid: 664f9e9d9a083e34e8d6ea0b4e9341f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.86

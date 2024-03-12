@@ -16,9 +16,14 @@ namespace BOARDSGATE.Combat{
         [SerializeField] float damage=30;
 
         float timeToLastAssault=0;
+        [SerializeField] Transform handTransform;
+
+        [SerializeField] Weapon weapon;
+        
         
         private void Start() {
             mover=GetComponent<Mover>();
+            SpawnWeapon();
         }
         private void Update() {
             timeToLastAssault+=Time.deltaTime;
@@ -76,6 +81,12 @@ namespace BOARDSGATE.Combat{
         void Hit(){
             if(target==null) return;
             target.TakeDamage(damage);
+        }
+
+        void SpawnWeapon(){
+            if(weapon==null) return;
+            Animator animator=GetComponent<Animator>();      
+            weapon.Spawn(handTransform,animator);           
         }
     }
 }
