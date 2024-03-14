@@ -57,9 +57,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &385123293504506965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 385123293504928603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &385123293504513059 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 417656, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+  m_PrefabInstance: {fileID: 385123293504928603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &385123293504580695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
   m_PrefabInstance: {fileID: 385123293504928603}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2619703590893270772
@@ -123,9 +133,29 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 589326e5b39775b4084b70731f31241e, type: 2}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: assaultRange
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 589326e5b39775b4084b70731f31241e, type: 2}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 385123293504506965}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 385123293504580695}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 385123293504506965}
     m_RemovedComponents:
     - {fileID: 8792774411519178368, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
     m_RemovedGameObjects: []
@@ -146,6 +176,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4443251647052570754}
+    - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7139652258957975159}
   m_SourcePrefab: {fileID: 100100000, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
 --- !u!4 &246827933952327270 stripped
 Transform:
@@ -169,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfda2683ee5d444d96c2db89eafe1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  health: 100
 --- !u!114 &7645494709770838271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +231,7 @@ MonoBehaviour:
   suspicionTime: 5
   patrolWaitTime: 3
   toleranceToPathPoint: 2
+  patrolSpeedRate: 0.3
   patrolPath: {fileID: 0}
 --- !u!136 &4443251647052570754
 CapsuleCollider:
@@ -222,3 +256,30 @@ CapsuleCollider:
   m_Height: 1.9
   m_Direction: 1
   m_Center: {x: 0, y: 0.96, z: 0}
+--- !u!54 &-7139652258957975159
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754089283247908308}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

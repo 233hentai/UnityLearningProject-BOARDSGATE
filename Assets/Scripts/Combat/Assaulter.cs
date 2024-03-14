@@ -10,20 +10,23 @@ namespace BOARDSGATE.Combat{
     {
         Health target;
         Mover mover;
-        [SerializeField] float assaultRange=2;
-        [SerializeField] float timeBetweenAssault=1f;
+        // [SerializeField] float assaultRange=2;
+        // [SerializeField] float timeBetweenAssault=1f;
 
-        [SerializeField] float damage=30;
+        // [SerializeField] float damage=30;
 
         float timeToLastAssault=0;
-        [SerializeField] Transform handTransform;
+        [SerializeField] Transform rightHandTransform;
+        [SerializeField] Transform leftHandTransform;
 
-        [SerializeField] Weapon weapon;
+        [SerializeField] Weapon defaultWeapon;
+
+        Weapon currentWeapon;
         
         
         private void Start() {
             mover=GetComponent<Mover>();
-            SpawnWeapon();
+            EquipWeapon(defaultWeapon);
         }
         private void Update() {
             timeToLastAssault+=Time.deltaTime;
@@ -46,7 +49,7 @@ namespace BOARDSGATE.Combat{
 
         private void AssaltBehaviour()
         {
-            if(timeToLastAssault>=timeBetweenAssault){
+            if(timeToLastAssault>=currentWeapon.GetTimeBetweenAssault()){
                 transform.LookAt(target.transform);
                 GetComponent<Animator>().ResetTrigger("StopAssault");
                 GetComponent<Animator>().SetTrigger("Assault");
@@ -56,7 +59,7 @@ namespace BOARDSGATE.Combat{
         }
 
         private bool InAssaultRange(){
-            return Vector3.Distance(transform.position,target.transform.position)<=assaultRange;
+            return Vector3.Distance(transform.position,target.transform.position)<=currentWeapon.GetAssaultRange();
         }
         public void Assault(GameObject assaultTarget){
             target=assaultTarget.GetComponent<Health>();
@@ -77,17 +80,28 @@ namespace BOARDSGATE.Combat{
             target=null;
         }
 
+        public void EquipWeapon(Weapon weaponToEquip){
+            Animator animator=GetComponent<Animator>();      
+            weaponToEquip.Spawn(leftHandTransform,rightHandTransform,animator);   
+            currentWeapon=weaponToEquip;
+        }
+
+
         //动画事件
         void Hit(){
             if(target==null) return;
-            target.TakeDamage(damage);
+            if(currentWeapon.hasProjectile()){
+                currentWeapon.LaunchProjectile(leftHandTransform,rightHandTransform,target);
+            }
+            else{
+                target.TakeDamage(currentWeapon.GetDamage());
+            }
+        }
+        void Shoot(){
+            Hit();
         }
 
-        void SpawnWeapon(){
-            if(weapon==null) return;
-            Animator animator=GetComponent<Animator>();      
-            weapon.Spawn(handTransform,animator);           
-        }
+        
     }
 }
 

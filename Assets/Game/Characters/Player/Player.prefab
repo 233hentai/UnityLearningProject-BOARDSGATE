@@ -73,7 +73,19 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 589326e5b39775b4084b70731f31241e, type: 2}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 4062413645661763315}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 4062413645661820571}
+    - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: rightHandTransform
       value: 
       objectReference: {fileID: 4062413645661763315}
     m_RemovedComponents: []
@@ -92,6 +104,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3999523374736427627}
+    - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2396873818977383064}
   m_SourcePrefab: {fileID: 100100000, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
 --- !u!4 &1506500519605855094 stripped
 Transform:
@@ -152,6 +167,33 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!54 &2396873818977383064
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996149236336490692}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4062413645661437815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,6 +310,11 @@ PrefabInstance:
 --- !u!4 &4062413645661763315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+  m_PrefabInstance: {fileID: 4062413645661437815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4062413645661820571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403948, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
   m_PrefabInstance: {fileID: 4062413645661437815}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &4062413645661854317 stripped

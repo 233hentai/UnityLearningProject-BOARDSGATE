@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410a599b76dec3b4ab390856fb7b5e81, type: 3}
+  m_Name: Bow 2
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 2184773917187355907, guid: 712ca56e1b260cc45923711c6b0cddd3, type: 3}
+  animatorOverrideController: {fileID: 22100000, guid: f8c8695be7c329d48a815dbd71914fd4, type: 2}
+  assaultRange: 20
+  timeBetweenAssault: 1
+  damage: 20
+  isRightHand: 0
+  projectile: {fileID: 4427273196016492564, guid: 10cb2f371aeb9bd45a143a4d3220dccf, type: 3}

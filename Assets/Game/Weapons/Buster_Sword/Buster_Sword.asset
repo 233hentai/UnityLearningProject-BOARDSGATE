@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 7173561048536290246, guid: f5f9a1c29b393a94889311f4e57b0ae0, type: 3}
   animatorOverrideController: {fileID: 22100000, guid: 54827e7eb1c3fce43a7ce11510f0f89e, type: 2}
+  assaultRange: 2.5
+  timeBetweenAssault: 2
+  damage: 100

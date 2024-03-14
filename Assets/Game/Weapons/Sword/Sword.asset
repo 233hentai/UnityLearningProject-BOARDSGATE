@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410a599b76dec3b4ab390856fb7b5e81, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  animatorOverrideController: {fileID: 0}
+  weapon: {fileID: 6456868895166033110, guid: 05b08e181ce2b704bba631a21b261a5d, type: 3}
+  animatorOverrideController: {fileID: 22100000, guid: 5b3680c17149bfe4f859d021d7688fa9, type: 2}
+  assaultRange: 2
+  timeBetweenAssault: 1
+  damage: 50
