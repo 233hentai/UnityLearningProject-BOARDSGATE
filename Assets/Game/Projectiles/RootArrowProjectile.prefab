@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: -3508819676919636268}
   - component: {fileID: 8633769888228716739}
   m_Layer: 0
-  m_Name: ArrowProjectile
+  m_Name: RootArrowProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,6 +202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  canTrackTarget: 0
+  maxLifeTime: 10
+  impactEffect: {fileID: 5293222744294075179, guid: af2862d2c71a7084f80bd143c380abb6, type: 3}
+  objectsDestroyOnHit:
+  - {fileID: 7351196482662049116}
+  lifeAfterImpact: 0.5
 --- !u!65 &8633769888228716739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -280,6 +286,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}
+--- !u!1 &7351196482662049116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1659504181823486, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}
+  m_PrefabInstance: {fileID: 7350251792043532962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7354861660192176662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4750687242688692, guid: c7f49c6920d49ba468b083941d79f2c0, type: 3}

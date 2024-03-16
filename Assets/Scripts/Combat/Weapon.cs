@@ -47,8 +47,6 @@ namespace BOARDSGATE.Combat{
             return isRightHand ? rightHandTransform : leftHandTransform;
         }
 
-        
-
         public float GetAssaultRange(){
             return assaultRange;
         }

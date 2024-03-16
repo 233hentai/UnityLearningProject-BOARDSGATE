@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3508819676919636268, guid: 3e26dd8540f9ef142bf36ff245238d8f, type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 5293222744294075179, guid: af2862d2c71a7084f80bd143c380abb6, type: 3}
+    - target: {fileID: -3508819676919636268, guid: 3e26dd8540f9ef142bf36ff245238d8f, type: 3}
+      propertyPath: canTrackTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3480956599009783987, guid: 3e26dd8540f9ef142bf36ff245238d8f, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime0
       value: 0
