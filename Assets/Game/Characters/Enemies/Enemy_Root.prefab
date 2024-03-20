@@ -126,7 +126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy_Root
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200130245724209742, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: characterClass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: damage
@@ -179,6 +183,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       insertIndex: -1
       addedObject: {fileID: -7139652258957975159}
+    - targetCorrespondingSourceObject: {fileID: 6712557362060301088, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3548076535680288687}
   m_SourcePrefab: {fileID: 100100000, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
 --- !u!4 &246827933952327270 stripped
 Transform:
@@ -283,3 +290,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3548076535680288687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754089283247908308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ba8bdfa98c2c644a49853762fab834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  characterClass: 1
+  progression: {fileID: 0}
+  EXPReward: 0

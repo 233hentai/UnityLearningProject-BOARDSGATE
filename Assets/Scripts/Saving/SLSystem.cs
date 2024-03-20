@@ -7,7 +7,8 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BOARDSGATE.Saving{
+namespace BOARDSGATE.Saving
+{
     public class SLSystem : MonoBehaviour
     {
         public void Save(string fileName){

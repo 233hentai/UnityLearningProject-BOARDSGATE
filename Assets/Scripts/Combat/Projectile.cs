@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using BOARDSGATE.Core;
+using BOARDSGATE.Attributes;
 using UnityEngine;
-namespace BOARDSGATE.Combat{
+namespace BOARDSGATE.Combat
+{
     public class Projectile : MonoBehaviour
     {
         [SerializeField] float speed=1f;
@@ -13,6 +12,7 @@ namespace BOARDSGATE.Combat{
         [SerializeField] float lifeAfterImpact=0.5f;
         Health target;
         float damage;
+        GameObject instigator;
 
         void Update()
         {   
@@ -27,7 +27,7 @@ namespace BOARDSGATE.Combat{
             Health targetHealth=other.GetComponent<Health>();
             if(targetHealth==target){
                 if(targetHealth.IsDead()) return;
-                target.TakeDamage(damage);
+                target.TakeDamage(damage,instigator);
             }
             if(impactEffect!=null){
                 Instantiate(impactEffect,transform.position,Quaternion.identity);
@@ -40,9 +40,10 @@ namespace BOARDSGATE.Combat{
 
 
 
-        public void SetTarget(Health target,float damage){
+        public void SetTarget(Health target,GameObject instigator,float damage){
             this.target=target;
             this.damage=damage;
+            this.instigator=instigator;
             transform.LookAt(GetAimPosition());
             Destroy(gameObject,maxLifeTime);
         }

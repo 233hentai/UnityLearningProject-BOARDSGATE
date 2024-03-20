@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using BOARDSGATE.Movement;
 using BOARDSGATE.Combat;
-using UnityEngine.AI;
-using Unity.VisualScripting;
-using UnityEngine.Jobs;
-using BOARDSGATE.Core;
-namespace BOARDSGATE.Control{
+using BOARDSGATE.Attributes;
+namespace BOARDSGATE.Control
+{
     public class PlayerController : MonoBehaviour
     {
         Mover mover;

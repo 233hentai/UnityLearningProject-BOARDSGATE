@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 487dec592d524054d8aa7c8f23b7bcc7, type: 3}
+  m_Name: Progression
+  m_EditorClassIdentifier: 
+  characterProgression:
+  - characterClass: 1
+    statsList:
+    - stats: 0
+      levels:
+      - 100
+      - 120
+      - 140
+      - 160
+      - 200
+      - 240
+      - 280
+      - 320
+      - 360
+      - 400
+      - 450
+      - 500
+      - 550
+      - 600
+      - 650
+      - 700
+      - 800
+      - 900
+      - 1000
+      - 2000
+    - stats: 1
+      levels:
+      - 10
+      - 20
+      - 50
+      - 100
+      - 200
+      - 300
+      - 400
+      - 500
+      - 750
+      - 1000
+      - 1500
+      - 2000
+      - 2500
+      - 3000
+      - 4000
+      - 5000
+      - 6000
+      - 7000
+      - 8000
+      - 10000
+  - characterClass: 0
+    statsList:
+    - stats: 0
+      levels:
+      - 200
+      - 240
+      - 280
+      - 320
+      - 400
+      - 480
+      - 540
+      - 640
+      - 720
+      - 800
+      - 900
+      - 1000
+      - 1100
+      - 1200
+      - 1300
+      - 1400
+      - 1600
+      - 1800
+      - 2000
+      - 4000
+  - characterClass: 2
+    statsList:
+    - stats: 0
+      levels:
+      - 50
+      - 60
+      - 70
+      - 80
+      - 100
+      - 120
+      - 140
+      - 160
+      - 180
+      - 200
+      - 225
+      - 250
+      - 275
+      - 300
+      - 325
+      - 350
+      - 400
+      - 450
+      - 500
+      - 1000
+    - stats: 1
+      levels:
+      - 10
+      - 20
+      - 50
+      - 100
+      - 200
+      - 300
+      - 400
+      - 500
+      - 750
+      - 1000
+      - 1500
+      - 2000
+      - 2500
+      - 3000
+      - 4000
+      - 5000
+      - 6000
+      - 7000
+      - 8000
+      - 10000
+  - characterClass: 3
+    statsList:
+    - stats: 0
+      levels:
+      - 50
+      - 60
+      - 70
+      - 80
+      - 100
+      - 120
+      - 140
+      - 160
+      - 180
+      - 200
+      - 225
+      - 250
+      - 275
+      - 300
+      - 325
+      - 350
+      - 400
+      - 450
+      - 500
+      - 1000
+    - stats: 1
+      levels:
+      - 10
+      - 20
+      - 50
+      - 100
+      - 200
+      - 300
+      - 400
+      - 500
+      - 750
+      - 1000
+      - 1500
+      - 2000
+      - 2500
+      - 3000
+      - 4000
+      - 5000
+      - 6000
+      - 7000
+      - 8000
+      - 10000

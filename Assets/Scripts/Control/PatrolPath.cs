@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace BOARDSGATE.Control{
+namespace BOARDSGATE.Control
+{
     public class PatrolPath : MonoBehaviour
     {
         private void OnDrawGizmos() {

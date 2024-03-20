@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using BOARDSGATE.Core;
+using BOARDSGATE.Attributes;
 
-namespace BOARDSGATE.Combat{
+namespace BOARDSGATE.Combat
+{
     [RequireComponent(typeof(Health))]
     public class AssaultTarget : MonoBehaviour
     {

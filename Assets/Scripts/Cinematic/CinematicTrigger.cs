@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using BOARDSGATE.Movement;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace BOARDSGATE.Cinematic{
+namespace BOARDSGATE.Cinematic
+{
     public class CinematicTrigger : MonoBehaviour{
         bool hasBeenPlayed=false;
         private void OnTriggerEnter(Collider other) {

@@ -1,8 +1,8 @@
-using System;
-using BOARDSGATE.Core;
+using BOARDSGATE.Attributes;
 using UnityEngine;
 
-namespace BOARDSGATE.Combat{
+namespace BOARDSGATE.Combat
+{
     [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
     public class Weapon : ScriptableObject {
         [SerializeField] GameObject weapon;
@@ -38,9 +38,9 @@ namespace BOARDSGATE.Combat{
             Destroy(oldWeapon.gameObject);
         }
 
-        public void LaunchProjectile(Transform leftHandTransform,Transform rightHandTransform,Health target){
+        public void LaunchProjectile(Transform leftHandTransform,Transform rightHandTransform,Health target,GameObject instigator){
             Projectile projectileInstance=Instantiate(projectile,GetHandTransform(leftHandTransform,rightHandTransform).position,Quaternion.identity);
-            projectileInstance.SetTarget(target,damage);
+            projectileInstance.SetTarget(target,instigator,damage);
         }
         private Transform GetHandTransform(Transform leftHandTransform, Transform rightHandTransform)
         {

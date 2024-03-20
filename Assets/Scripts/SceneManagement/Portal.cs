@@ -7,7 +7,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
-namespace BOARDSGATE.SceneMnagement{
+namespace BOARDSGATE.SceneMnagement
+{
     public class Portal : MonoBehaviour
     {   
         enum PortalNo{A,B,C,D,E};
@@ -32,18 +33,22 @@ namespace BOARDSGATE.SceneMnagement{
             }
             DontDestroyOnLoad(gameObject);
             Fader fader=FindObjectOfType<Fader>();
-            yield return fader.FadeOut(fadeOutTime);
+            //yield return fader.FadeOut(fadeOutTime);
             SLWrapper Wrapper=FindObjectOfType<SLWrapper>();
             Wrapper.Save();
+            print("start load scene");
             yield return SceneManager.LoadSceneAsync(sceneIndex);
+            print("start load data");
             Wrapper.Load();
+            print("Loaded");
 
             Portal anotherPortal=GetAnotherPortal();
             UpdatePlayer(anotherPortal);
             Wrapper.Save();//到一个新场景后自动存档
 
-
+            print("start fade in");
             yield return fader.FadeIn(fadeInTime);
+            print("faded in");
             yield return new WaitForSeconds(fadeWaitTime);
 
             Destroy(gameObject);

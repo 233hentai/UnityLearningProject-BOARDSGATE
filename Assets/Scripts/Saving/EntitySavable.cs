@@ -7,7 +7,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace BOARDSGATE.Saving{
+namespace BOARDSGATE.Saving
+{
     [ExecuteAlways]
     public class EntitySavable : MonoBehaviour
     {

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BOARDSGATE.SceneMnagement{
+namespace BOARDSGATE.SceneMnagement
+{
     public class Fader : MonoBehaviour
     {      
         CanvasGroup canvasGroup;

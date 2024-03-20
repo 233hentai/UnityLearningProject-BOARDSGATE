@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-namespace BOARDSGATE.Core{
+namespace BOARDSGATE.Core
+{
     public class ActionScheduler : MonoBehaviour
     {
         IAction currentAction;

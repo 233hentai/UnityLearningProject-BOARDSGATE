@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using BOARDSGATE.Attributes;
 using BOARDSGATE.Core;
 using BOARDSGATE.Movement;
-using Unity.VisualScripting;
+using BOARDSGATE.Saving;
 using UnityEngine;
 
-namespace BOARDSGATE.Combat{
-    public class Assaulter : MonoBehaviour,IAction
+namespace BOARDSGATE.Combat
+{
+    public class Assaulter : MonoBehaviour,IAction,ISaveable
     {
         Health target;
         Mover mover;
@@ -20,13 +20,15 @@ namespace BOARDSGATE.Combat{
         [SerializeField] Transform leftHandTransform;
 
         [SerializeField] Weapon defaultWeapon;
+        //[SerializeField] string defaultWeaponName=null;
 
         Weapon currentWeapon;
         
-        
         private void Start() {
             mover=GetComponent<Mover>();
-            EquipWeapon(defaultWeapon);
+            if(currentWeapon==null){
+                EquipWeapon(defaultWeapon);
+            }           
         }
         private void Update() {
             timeToLastAssault+=Time.deltaTime;
@@ -45,6 +47,10 @@ namespace BOARDSGATE.Combat{
                 AssaltBehaviour();
                 
             }
+        }
+
+        public Health GetTarget(){
+            return target;
         }
 
         private void AssaltBehaviour()
@@ -86,22 +92,32 @@ namespace BOARDSGATE.Combat{
             currentWeapon=weaponToEquip;
         }
 
+        public object GetStates()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreStates(object state)
+        {
+            string weaponName=(string)state;
+            Weapon weapon=Resources.Load<Weapon>(weaponName);
+            EquipWeapon(weapon);
+        }
 
         //动画事件
         void Hit(){
             if(target==null) return;
             if(currentWeapon.hasProjectile()){
-                currentWeapon.LaunchProjectile(leftHandTransform,rightHandTransform,target);
+                currentWeapon.LaunchProjectile(leftHandTransform,rightHandTransform,target,gameObject);
             }
             else{
-                target.TakeDamage(currentWeapon.GetDamage());
+                target.TakeDamage(currentWeapon.GetDamage(),gameObject);
             }
         }
         void Shoot(){
             Hit();
         }
 
-        
     }
 }
 

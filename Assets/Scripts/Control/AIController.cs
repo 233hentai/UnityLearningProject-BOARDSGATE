@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using BOARDSGATE.Attributes;
 using BOARDSGATE.Combat;
 using BOARDSGATE.Core;
 using BOARDSGATE.Movement;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace BOARDSGATE.Control
 {

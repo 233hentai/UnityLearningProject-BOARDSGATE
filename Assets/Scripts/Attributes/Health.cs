@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using BOARDSGATE.Saving;
-using System.Runtime.InteropServices.WindowsRuntime;
+using BOARDSGATE.Core;
+using BOARDSGATE.Stats;
 
-namespace BOARDSGATE.Core{
+namespace BOARDSGATE.Attributes
+{
     public class Health : MonoBehaviour,ISaveable{
         [SerializeField]float health=100f;
         bool isDead=false;
-        public void TakeDamage(float damage){
+
+        private void Start() {
+            health=GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
+        }
+        public void TakeDamage(float damage,GameObject instigator){
             health=health-damage>=0?health-damage:0;
-            if(health==0){
+            if(health==0)
+            {
                 Die();
+                ProvideEXP(instigator);
             }
+        }
+
+        private void ProvideEXP(GameObject instigator)
+        {
+            Experience experience=instigator.GetComponent<Experience>();
+            if(experience==null) return;
+            experience.AcquireEXP(GetComponent<BaseStats>().GetStats(Stats.Stats.EXPReward));
         }
 
         void Die(){
@@ -24,6 +37,10 @@ namespace BOARDSGATE.Core{
                 GetComponent<Animator>().SetTrigger("Die");
                 GetComponent<ActionScheduler>().CancelCurrentAction();
             }
+        }
+
+        public float GetPercentage(){
+            return 100*health/GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
         }
 
         public bool IsDead(){

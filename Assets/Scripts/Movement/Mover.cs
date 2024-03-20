@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using BOARDSGATE.Core;
 using BOARDSGATE.Saving;
+using BOARDSGATE.Attributes;
 
-namespace BOARDSGATE.Movement{
+namespace BOARDSGATE.Movement
+{
     public class Mover : MonoBehaviour,IAction,ISaveable
     {
         NavMeshAgent navMeshAgent;
@@ -52,7 +52,7 @@ namespace BOARDSGATE.Movement{
         public void RestoreStates(object state)
         {
             Vector3Serializable position=(Vector3Serializable)state;
-            print(gameObject+": "+position.ToVector3());
+            //print(gameObject+": "+position.ToVector3());
             GetComponent<NavMeshAgent>().enabled=false;//启用navmesh时改变位置可能会引起Bug
             transform.position=position.ToVector3();
             GetComponent<NavMeshAgent>().enabled=true;

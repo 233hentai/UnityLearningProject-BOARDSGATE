@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using BOARDSGATE.Combat;
 using BOARDSGATE.Control;
 using BOARDSGATE.Core;
-using BOARDSGATE.Movement;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace BOARDSGATE.Cinematic{
-public class CinematicControlController : MonoBehaviour
+namespace BOARDSGATE.Cinematic
+{
+    public class CinematicControlController : MonoBehaviour
     {
         GameObject player;
         void Start()
