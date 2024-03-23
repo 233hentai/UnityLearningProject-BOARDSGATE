@@ -6,11 +6,13 @@ using BOARDSGATE.Stats;
 namespace BOARDSGATE.Attributes
 {
     public class Health : MonoBehaviour,ISaveable{
-        [SerializeField]float health=100f;
+        float health=-1f;
         bool isDead=false;
 
         private void Start() {
-            health=GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
+            if(health<0){
+                health=GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
+            }
         }
         public void TakeDamage(float damage,GameObject instigator){
             health=health-damage>=0?health-damage:0;

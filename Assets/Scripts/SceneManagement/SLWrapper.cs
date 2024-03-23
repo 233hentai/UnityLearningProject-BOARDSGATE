@@ -24,6 +24,10 @@ namespace BOARDSGATE.SceneMnagement{
             if(Input.GetKeyDown(KeyCode.S)){
                 Save();
             }
+            if(Input.GetKeyDown(KeyCode.Delete)){
+                Delete();
+            }
+
         }
 
         public void Save()
@@ -34,6 +38,11 @@ namespace BOARDSGATE.SceneMnagement{
         public void Load()
         {
             GetComponent<SLSystem>().Load(savingFileName);
+        }
+
+        public void Delete()
+        {
+            GetComponent<SLSystem>().Delete(savingFileName);
         }
     }
 }

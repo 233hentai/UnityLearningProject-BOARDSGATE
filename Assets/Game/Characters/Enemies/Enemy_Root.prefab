@@ -162,6 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 385123293504506965}
     m_RemovedComponents:
     - {fileID: 8792774411519178368, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+    - {fileID: 146303394951190740, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2825980436501301394, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
@@ -305,4 +306,3 @@ MonoBehaviour:
   level: 1
   characterClass: 1
   progression: {fileID: 0}
-  EXPReward: 0

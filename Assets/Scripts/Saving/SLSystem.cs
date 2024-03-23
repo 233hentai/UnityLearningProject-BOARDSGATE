@@ -21,6 +21,14 @@ namespace BOARDSGATE.Saving
             RestoreStates(LoadFile(fileName));
         }
 
+        public void Delete(string fileName)
+        {
+            string path=GetPathWithFileName(fileName);
+            if(File.Exists(path)){
+                File.Delete(path);
+            }
+        }
+
         private void SaveFile(string fileName, object states)
         {
             string path=GetPathWithFileName(fileName);

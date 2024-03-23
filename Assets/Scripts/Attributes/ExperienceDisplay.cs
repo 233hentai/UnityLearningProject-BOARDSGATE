@@ -4,14 +4,16 @@ using BOARDSGATE.Attributes;
 using UnityEngine;
 using TMPro;
 
-public class ExperienceDisplay : MonoBehaviour
-{
-    Experience experience;
-    private void Awake() {
-        experience=GameObject.FindWithTag("Player").GetComponent<Experience>();
-    }
-    void Update()
+namespace BOARDSGATE.Attributes{
+    public class ExperienceDisplay : MonoBehaviour
     {
-        GetComponent<TextMeshProUGUI>().text=experience.GetEXP().ToString();
+        Experience experience;
+        private void Awake() {
+            experience=GameObject.FindWithTag("Player").GetComponent<Experience>();
+        }
+        void Update()
+        {
+            GetComponent<TextMeshProUGUI>().text=experience.GetEXP().ToString();
+        }
     }
 }

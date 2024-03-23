@@ -83,6 +83,12 @@ MonoBehaviour:
       - 1800
       - 2000
       - 4000
+    - stats: 2
+      levels:
+      - 10
+      - 20
+      - 30
+      - 40
   - characterClass: 2
     statsList:
     - stats: 0

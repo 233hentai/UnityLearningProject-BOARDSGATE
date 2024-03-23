@@ -9,7 +9,7 @@ namespace BOARDSGATE.Combat
         [SerializeField] float maxLifeTime=10f;
         [SerializeField] GameObject impactEffect;
         [SerializeField] GameObject[] objectsDestroyOnHit;
-        [SerializeField] float lifeAfterImpact=0.5f;
+        [SerializeField] float objectLifeAfterImpact=0.5f;
         Health target;
         float damage;
         GameObject instigator;
@@ -35,7 +35,7 @@ namespace BOARDSGATE.Combat
             foreach(GameObject ob in objectsDestroyOnHit){
                 Destroy(ob);//碰撞后并不立即销毁全部，留下需要留下的(如粒子特效)
             }
-            Destroy(gameObject,lifeAfterImpact);
+            Destroy(gameObject,objectLifeAfterImpact);
         }
 
 

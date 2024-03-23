@@ -50,7 +50,8 @@ MonoBehaviour:
   canTrackTarget: 1
   maxLifeTime: 10
   impactEffect: {fileID: 8567211605287816453, guid: c5e19dbdffbc5534480b7fa3bde9a53c, type: 3}
-  objectsDestroyOnHit: []
+  objectsDestroyOnHit:
+  - {fileID: 0}
   lifeAfterImpact: 0.5
 --- !u!135 &1074747702550296515
 SphereCollider:

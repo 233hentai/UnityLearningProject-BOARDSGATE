@@ -33,7 +33,7 @@ namespace BOARDSGATE.SceneMnagement
             }
             DontDestroyOnLoad(gameObject);
             Fader fader=FindObjectOfType<Fader>();
-            //yield return fader.FadeOut(fadeOutTime);
+            yield return fader.FadeOut(fadeOutTime);
             SLWrapper Wrapper=FindObjectOfType<SLWrapper>();
             Wrapper.Save();
             print("start load scene");
