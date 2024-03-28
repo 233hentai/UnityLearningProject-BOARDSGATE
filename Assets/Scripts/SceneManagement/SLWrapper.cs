@@ -9,7 +9,10 @@ namespace BOARDSGATE.SceneMnagement{
         const string savingFileName="save";
         [SerializeField]float fadeInTime=0.5f;
 
-        private IEnumerator Start() {
+        private void Awake() {
+            StartCoroutine(LoadLastScene());
+        }
+        private IEnumerator LoadLastScene() {
             Fader fader=FindObjectOfType<Fader>();
             fader.FadeOutDirectly();
             yield return GetComponent<SLSystem>().LoadLastScene(savingFileName);

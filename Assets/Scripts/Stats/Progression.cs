@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using BOARDSGATE.Attributes;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace BOARDSGATE.Stats{
         public float GetStats(CharacterClass character,Stats stats,int level){
             BuildLookup();
             if(lookupTable[character][stats].Length>=level){
+                //Debug.Log(character.ToString()+stats.ToString()+level);
                 return lookupTable[character][stats][level-1];
             }
             

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7200130245724209742, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
+      propertyPath: levelUpEffect
+      value: 
+      objectReference: {fileID: 1624809597534284273, guid: c2029f03b20dcdd40aba4472d92a0bc8, type: 3}
     - target: {fileID: 7964943565990076231, guid: 77fe472f1639429498d6730ae3554d59, type: 3}
       propertyPath: weapon
       value: 
@@ -143,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bfda2683ee5d444d96c2db89eafe1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
 --- !u!136 &3999523374736427627
 CapsuleCollider:
   m_ObjectHideFlags: 0

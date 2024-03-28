@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using BOARDSGATE.Saving;
@@ -7,6 +8,7 @@ namespace BOARDSGATE.Attributes{
     public class Experience : MonoBehaviour,ISaveable
     {
         [SerializeField] float EXP=0;
+        public event Action onEXPAquired;
 
         public float GetEXP(){
             return EXP;
@@ -14,6 +16,7 @@ namespace BOARDSGATE.Attributes{
 
         public void AcquireEXP(float EXP){
             this.EXP+=EXP;
+            onEXPAquired();
         }
 
         public object GetStates()

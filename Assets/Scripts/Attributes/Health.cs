@@ -8,10 +8,15 @@ namespace BOARDSGATE.Attributes
     public class Health : MonoBehaviour,ISaveable{
         float health=-1f;
         bool isDead=false;
-
+        BaseStats baseStats;
         private void Start() {
+            baseStats=GetComponent<BaseStats>();
+            baseStats.onLevelUp+=UpdateHealthWhenLevelUp;
             if(health<0){
-                health=GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
+                health=baseStats.GetStats(Stats.Stats.Health);
+            }
+            if(tag=="Player"){
+                print("HP:"+health);
             }
         }
         public void TakeDamage(float damage,GameObject instigator){
@@ -27,7 +32,15 @@ namespace BOARDSGATE.Attributes
         {
             Experience experience=instigator.GetComponent<Experience>();
             if(experience==null) return;
-            experience.AcquireEXP(GetComponent<BaseStats>().GetStats(Stats.Stats.EXPReward));
+            experience.AcquireEXP(baseStats.GetStats(Stats.Stats.EXPReward));
+        }
+
+        public void UpdateHealthWhenLevelUp(){
+            float percent=GetPercentage()/100;
+            health=baseStats.GetStats(Stats.Stats.Health,baseStats.GetLevel()+1)*percent;
+            // if(tag=="Player"){
+            //     print("HP:"+health);
+            // }
         }
 
         void Die(){
@@ -42,7 +55,7 @@ namespace BOARDSGATE.Attributes
         }
 
         public float GetPercentage(){
-            return 100*health/GetComponent<BaseStats>().GetStats(Stats.Stats.Health);
+            return 100*health/baseStats.GetStats(Stats.Stats.Health);
         }
 
         public bool IsDead(){
